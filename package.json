@@ -1,0 +1,31 @@
+{
+  "name": "exp-roofline-analysis-iiith",
+  "version": "1.0.0",
+  "description": "Interactive Roofline Performance Model Analysis Experiment for understanding computational performance bounds and optimization strategies across different computer architectures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/virtual-labs/exp-roofline-analysis-iiith.git"
+  },
+  "keywords": [
+    "roofline-model",
+    "performance-analysis",
+    "computer-architecture", 
+    "hpc",
+    "optimization",
+    "virtual-labs",
+    "education"
+  ],
+  "author": "Indian Institute of Technology Hyderabad",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/virtual-labs/exp-roofline-analysis-iiith/issues"
+  },
+  "homepage": "https://github.com/virtual-labs/exp-roofline-analysis-iiith#readme",
+  "dependencies": {
+    "@virtual-labs/buildexp": "^2.1.0"
+  }
+}
