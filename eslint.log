@@ -1,0 +1,11 @@
+
+/home/runner/work/exp-roofline-analysis-iiith/exp-roofline-analysis-iiith/experiment/simulation/js/main.js
+   32:34  warning  'elements' is defined but never used            no-unused-vars
+   97:26  warning  'Chart' is not defined                          no-undef
+  118:15  warning  'x' is assigned a value but never used          no-unused-vars
+  119:15  warning  'y' is assigned a value but never used          no-unused-vars
+  121:32  warning  'Chart' is not defined                          no-undef
+  586:5   warning  'simulator' is assigned a value but never used  no-unused-vars
+
+✖ 6 problems (0 errors, 6 warnings)
+

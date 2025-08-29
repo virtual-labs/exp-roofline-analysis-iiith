@@ -1,0 +1,158 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Based on your exploration of the roofline simulator, what is the primary characteristic of applications in the memory-bound region?",
+      "answers": {
+        "a": "They achieve peak computational performance regardless of operational intensity",
+        "b": "Their performance scales proportionally with operational intensity until hitting the compute bound",
+        "c": "They operate independently of memory bandwidth limitations",
+        "d": "They always require high-bandwidth memory to function"
+      },
+      "explanations": {
+        "a": "Incorrect. Memory-bound applications cannot achieve peak compute performance due to bandwidth limitations.",
+        "b": "Correct. In the memory-bound region, performance scales linearly with operational intensity along the diagonal bandwidth line until reaching the ridge point.",
+        "c": "Incorrect. Memory-bound applications are specifically limited by memory bandwidth.",
+        "d": "Incorrect. All applications benefit from higher bandwidth, but memory-bound applications are particularly sensitive to it."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "After using the simulation, what can you conclude about the ridge point's significance?",
+      "answers": {
+        "a": "It represents the maximum memory capacity of the system",
+        "b": "It is the point where applications transition from memory-bound to compute-bound behavior",
+        "c": "It indicates the optimal processor frequency setting",
+        "d": "It shows the cache miss rate threshold"
+      },
+      "explanations": {
+        "a": "Incorrect. The ridge point is not related to memory capacity.",
+        "b": "Correct. The ridge point is where the memory bandwidth bound intersects the compute bound, marking the transition between memory-bound and compute-bound regions.",
+        "c": "Incorrect. The ridge point doesn't directly indicate frequency settings.",
+        "d": "Incorrect. Cache miss rates are not directly represented by the ridge point."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What did you observe about applications positioned above the roofline in the simulator?",
+      "answers": {
+        "a": "They represent achievable performance for most applications",
+        "b": "They indicate measurement errors or unrealistic theoretical bounds",
+        "c": "They show optimal performance that all applications should target",
+        "d": "Such positioning is impossible in practice and indicates specification errors"
+      },
+      "explanations": {
+        "a": "Incorrect. Applications above the roofline exceed theoretical limits.",
+        "b": "Correct. Applications above the roofline suggest either measurement errors, overly conservative theoretical bounds, or special architectural features not captured in the basic model.",
+        "c": "Incorrect. The roofline represents theoretical upper bounds that applications approach but typically don't exceed.",
+        "d": "Incorrect. While rare, applications can appear above simplified rooflines due to model limitations."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Based on your simulation experience, how would you optimize a memory-bound application with operational intensity of 0.1 FLOPS/byte?",
+      "answers": {
+        "a": "Increase the processor clock frequency",
+        "b": "Add more CPU cores for parallel execution",
+        "c": "Implement cache blocking and data structure reorganization to increase arithmetic intensity",
+        "d": "Upgrade to a processor with higher peak FLOPS capability"
+      },
+      "explanations": {
+        "a": "Incorrect. Higher clock frequency improves compute capability but doesn't address the memory bandwidth bottleneck.",
+        "b": "Incorrect. More cores won't help if the application is fundamentally limited by memory bandwidth.",
+        "c": "Correct. Cache blocking and data reorganization can increase effective arithmetic intensity and improve memory utilization efficiency.",
+        "d": "Incorrect. Higher peak FLOPS won't help for memory-bound applications; the memory bandwidth is the limiting factor."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "When comparing the Apple Silicon, Intel Xeon, and NVIDIA GPU configurations in the simulator, what key architectural insight emerges?",
+      "answers": {
+        "a": "All architectures have similar memory bandwidth capabilities",
+        "b": "GPU architectures prioritize extremely high compute throughput while CPUs balance compute and memory bandwidth",
+        "c": "Intel processors have the highest memory bandwidth among all options",
+        "d": "Apple Silicon has the lowest overall performance capabilities"
+      },
+      "explanations": {
+        "a": "Incorrect. The configurations show significant differences in memory bandwidth across architectures.",
+        "b": "Correct. GPUs emphasize massive parallel compute capability with very high peak performance, while CPUs provide more balanced memory-compute ratios suitable for diverse workloads.",
+        "c": "Incorrect. Modern GPUs typically have much higher memory bandwidth than traditional CPUs.",
+        "d": "Incorrect. Apple Silicon shows competitive performance with unified memory architecture advantages."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "From your experience plotting application points, what determines whether an application would benefit more from memory bandwidth improvements versus compute capability upgrades?",
+      "answers": {
+        "a": "The application's position relative to the ridge point",
+        "b": "The total execution time of the application",
+        "c": "The programming language used to implement the application",
+        "d": "The number of threads the application uses"
+      },
+      "explanations": {
+        "a": "Correct. Applications to the left of the ridge point (low OI) are memory-bound and benefit from bandwidth improvements, while those to the right (high OI) are compute-bound and benefit from increased compute capability.",
+        "b": "Incorrect. Execution time alone doesn't determine the bottleneck type.",
+        "c": "Incorrect. Programming language doesn't directly determine memory vs. compute bounds.",
+        "d": "Incorrect. Thread count affects parallelization but doesn't determine the fundamental bottleneck."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What insight about cache hierarchy did you gain from building multi-level memory rooflines in the simulator?",
+      "answers": {
+        "a": "Cache levels don't significantly impact application performance",
+        "b": "Only the lowest cache level matters for performance analysis",
+        "c": "Different cache levels create a stepped roofline showing how data locality affects achievable performance",
+        "d": "Cache hierarchy only matters for write operations"
+      },
+      "explanations": {
+        "a": "Incorrect. Cache hierarchy significantly impacts performance by providing different bandwidth levels.",
+        "b": "Incorrect. All cache levels contribute to the overall performance characteristics.",
+        "c": "Correct. Multiple cache levels create a stepped roofline where applications with good data locality can operate on higher bandwidth bounds, while those with poor locality are limited to lower memory hierarchy levels.",
+        "d": "Incorrect. Cache hierarchy affects both read and write performance."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Considering real-world optimization scenarios based on your simulation experience, what would be the most effective approach for optimizing a compute-bound application?",
+      "answers": {
+        "a": "Increase memory bandwidth through faster DRAM",
+        "b": "Implement vectorization and utilize SIMD instructions to increase peak compute utilization",
+        "c": "Restructure data layout to improve cache efficiency",
+        "d": "Reduce the operational intensity through algorithmic changes"
+      },
+      "explanations": {
+        "a": "Incorrect. Memory bandwidth improvements won't help compute-bound applications operating at the horizontal compute ceiling.",
+        "b": "Correct. Compute-bound applications benefit from maximizing utilization of available compute resources through vectorization, SIMD, and parallel processing to approach the peak compute bound.",
+        "c": "Incorrect. While data layout can help, compute-bound applications are not primarily limited by memory access patterns.",
+        "d": "Incorrect. Reducing operational intensity would move the application toward the memory-bound region, which doesn't address the compute limitation."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Based on your analysis of different architectural configurations, how would you approach hardware selection for a mixed workload containing both memory-bound and compute-bound applications?",
+      "answers": {
+        "a": "Choose the architecture with the highest peak compute performance only",
+        "b": "Select the system with the highest memory bandwidth regardless of compute capability",
+        "c": "Balance memory bandwidth and compute capability based on the workload distribution and identify optimal ridge point positioning",
+        "d": "Use multiple specialized processors for each application type"
+      },
+      "explanations": {
+        "a": "Incorrect. This approach would leave memory-bound applications underperforming.",
+        "b": "Incorrect. This would not serve compute-bound applications effectively.",
+        "c": "Correct. Mixed workloads require balanced architectures where the ridge point positioning and both memory and compute capabilities align with the application distribution for optimal overall performance.",
+        "d": "Incorrect. While specialized processors can help, the question asks about hardware selection approach, not system architecture design."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    }
+  ]
+}
