@@ -1,6 +1,6 @@
 {
   "unit-type": "lu",
-  "label": "",
+  "label": "Roofline Performance Model Analysis",
   "basedir": ".",
   "LaTeXinMD": false,
   "code-assessment": {
