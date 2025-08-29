@@ -6,4 +6,4 @@
 ### Developers
 | SNo. | Name | Email | Institute | ID |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | Siddhant Garg | siddhantllg@gmail.com | IIIT Hyderabad | - |
+| 1 | Siddhant Garg | siddhant.garg@research.iiit.ac.in | IIIT Hyderabad | - |
