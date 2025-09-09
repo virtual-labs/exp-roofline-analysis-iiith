@@ -2,38 +2,157 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What does the Roofline Performance Model primarily help analyze?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Network bandwidth and latency",
+        "b": "Memory hierarchy and cache performance only", 
+        "c": "Upper bounds of achievable performance for computational kernels",
+        "d": "Power consumption and thermal characteristics"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "Incorrect. The roofline model focuses on computational performance bounds, not network characteristics.",
+        "b": "Incorrect. While memory hierarchy is important, the roofline model encompasses both memory and compute performance bounds.",
+        "c": "Correct. The roofline model visualizes theoretical performance upper bounds based on memory bandwidth and peak compute capabilities.",
+        "d": "Incorrect. The roofline model is primarily concerned with performance bounds, not power or thermal analysis."
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+    {
+      "question": "What does 'Operational Intensity' represent in the roofline model?",
+      "answers": {
+        "a": "The number of operations per second",
+        "b": "The ratio of floating-point operations to bytes accessed from memory",
+        "c": "The memory bandwidth utilization percentage",
+        "d": "The CPU utilization during computation"
+      },
+      "explanations": {
+        "a": "Incorrect. Operations per second is a performance metric, not operational intensity.",
+        "b": "Correct. Operational intensity is defined as FLOPS per byte accessed, measuring computational work relative to memory traffic.",
+        "c": "Incorrect. This describes bandwidth utilization, not operational intensity.",
+        "d": "Incorrect. CPU utilization is a separate metric from operational intensity."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In a roofline plot, applications positioned in the lower-left region are typically:",
+      "answers": {
+        "a": "Compute-bound with high arithmetic intensity",
+        "b": "Memory-bound with low arithmetic intensity", 
+        "c": "Balanced between memory and compute requirements",
+        "d": "Limited by network I/O operations"
+      },
+      "explanations": {
+        "a": "Incorrect. Lower-left indicates low operational intensity, not high.",
+        "b": "Correct. Lower-left region has low operational intensity and performance limited by memory bandwidth.",
+        "c": "Incorrect. Balanced workloads appear near the ridge point where memory and compute bounds intersect.",
+        "d": "Incorrect. The roofline model focuses on memory-compute bounds, not I/O limitations."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the primary purpose of the diagonal lines in a roofline chart?",
+      "answers": {
+        "a": "To show cache miss rates",
+        "b": "To represent memory bandwidth limitations",
+        "c": "To indicate processor frequency scaling",
+        "d": "To display parallel efficiency metrics"
+      },
+      "explanations": {
+        "a": "Incorrect. Cache miss rates are not directly represented by diagonal lines.",
+        "b": "Correct. Diagonal lines represent memory bandwidth limitations where performance scales linearly with operational intensity.",
+        "c": "Incorrect. Frequency scaling is not shown by diagonal lines in roofline plots.",
+        "d": "Incorrect. Parallel efficiency is not directly represented by diagonal lines."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "What determines the 'ridge point' in a roofline model?",
+      "answers": {
+        "a": "The maximum memory capacity of the system",
+        "b": "The intersection of memory bandwidth and peak compute performance bounds",
+        "c": "The optimal operating frequency of the processor",
+        "d": "The cache miss rate threshold"
+      },
+      "explanations": {
+        "a": "Incorrect. Memory capacity doesn't determine the ridge point.",
+        "b": "Correct. The ridge point occurs where the diagonal memory bound line intersects the horizontal compute bound line.",
+        "c": "Incorrect. Operating frequency affects performance but doesn't define the ridge point directly.",
+        "d": "Incorrect. Cache miss rates affect performance but don't determine the ridge point location."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "How is the ridge point mathematically calculated?",
+      "answers": {
+        "a": "Memory Bandwidth × Peak Compute Performance",
+        "b": "Peak Compute Performance ÷ Memory Bandwidth",
+        "c": "Memory Bandwidth ÷ Peak Compute Performance",
+        "d": "√(Memory Bandwidth × Peak Compute Performance)"
+      },
+      "explanations": {
+        "a": "Incorrect. This would give units of GFLOPS²·s/Byte, which is meaningless.",
+        "b": "Correct. Ridge point = Peak Compute Performance ÷ Memory Bandwidth, giving the operational intensity where memory and compute bounds intersect.",
+        "c": "Incorrect. This gives the reciprocal of the ridge point.",
+        "d": "Incorrect. This geometric mean doesn't represent the ridge point calculation."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which statement about memory hierarchy in roofline models is correct?",
+      "answers": {
+        "a": "Only DRAM bandwidth matters for roofline analysis",
+        "b": "Cache levels don't affect the roofline shape",
+        "c": "Multiple memory levels create a stepped roofline with different bandwidth bounds",
+        "d": "Memory hierarchy only affects latency, not bandwidth"
+      },
+      "explanations": {
+        "a": "Incorrect. Multiple memory levels contribute to the overall roofline shape.",
+        "b": "Incorrect. Different cache levels with varying bandwidths create multiple diagonal bounds.",
+        "c": "Correct. Each memory level contributes its own bandwidth bound, creating a stepped roofline pattern.",
+        "d": "Incorrect. Memory hierarchy affects both bandwidth and latency characteristics."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "In roofline analysis, what does it mean when an application operates below the roofline?",
+      "answers": {
+        "a": "The application is performing optimally",
+        "b": "There are opportunities for performance optimization",
+        "c": "The hardware specifications are incorrect",
+        "d": "The application requires more memory"
+      },
+      "explanations": {
+        "a": "Incorrect. Operating below the roofline indicates suboptimal performance.",
+        "b": "Correct. Performance below the roofline indicates optimization opportunities through better algorithm design, vectorization, or memory access patterns.",
+        "c": "Incorrect. The roofline represents theoretical hardware limits, not incorrect specifications.",
+        "d": "Incorrect. Operating below the roofline doesn't necessarily indicate memory capacity issues."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What is the significance of logarithmic scaling in roofline plots?",
+      "answers": {
+        "a": "It makes the computation easier for processors",
+        "b": "It allows visualization of the wide range of operational intensities and performance values",
+        "c": "It automatically optimizes application performance",
+        "d": "It reduces memory bandwidth requirements"
+      },
+      "explanations": {
+        "a": "Incorrect. Logarithmic scaling is a visualization choice, not a computational aid.",
+        "b": "Correct. Logarithmic scaling accommodates the orders-of-magnitude differences in both operational intensity and performance across different applications and architectures.",
+        "c": "Incorrect. Scaling doesn't optimize performance; it's purely for visualization.",
+        "d": "Incorrect. Scaling choice doesn't affect hardware requirements."
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
     }
   ]
 }
