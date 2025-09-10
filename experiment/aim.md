@@ -1,5 +1,3 @@
-### Aim of the experiment
-
 To understand and analyze the Roofline Performance Model for computational performance optimization. This experiment aims to:
 
 1. **Understand Performance Bounds**: Learn how the Roofline model visualizes theoretical performance upper bounds based on the interplay between memory bandwidth and computational throughput across different computer architectures.

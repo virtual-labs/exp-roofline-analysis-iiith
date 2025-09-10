@@ -1,10 +1,9 @@
-## Procedure
-
 Follow these step-by-step instructions to understand and explore the Roofline Performance Model using the interactive simulator.
 
 ### Step 1: Understanding the Interface
 
 1. **Observe the Initial Setup**
+
    - Notice the main roofline chart area with logarithmic axes
    - The X-axis represents Operational Intensity (FLOP/Byte)
    - The Y-axis represents Performance (GFLOP/s)
@@ -20,6 +19,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 2: Basic Roofline Construction
 
 1. **Start with Apple Silicon M1**
+
    - Select **Apple Silicon M1** from the architecture dropdown
    - Observe the pre-configured roofline with:
      - Memory bandwidth: 68.25 GB/s
@@ -27,6 +27,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
      - Ridge point automatically calculated
 
 2. **Understand the Roofline Shape**
+
    - Notice the diagonal line representing memory bandwidth limitation
    - Observe the horizontal line representing compute capability ceiling
    - Identify the ridge point where these two lines intersect
@@ -40,6 +41,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 3: Interactive Roofline Modification
 
 1. **Use Custom Configuration**
+
    - Select **Custom** from the architecture dropdown
    - Adjust the **Memory Bandwidth** slider (1-1000 GB/s range)
    - Modify the **Compute Capability** slider (0.1-100 TFLOP/s range)
@@ -54,6 +56,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 4: Application Performance Analysis
 
 1. **Plot Basic Applications**
+
    - Click anywhere on the roofline chart to add an application point
    - Try plotting points in different regions:
      - Below the diagonal (memory-bound region)
@@ -61,6 +64,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
      - On the horizontal ceiling (compute-bound region)
 
 2. **Analyze Predefined Workloads**
+
    - Use the application selector to add common workloads:
      - **Vector Addition**: Low operational intensity, memory-bound
      - **Dense Matrix Multiplication**: High operational intensity, potentially compute-bound
@@ -75,6 +79,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 5: Bottleneck Identification
 
 1. **Memory-Bound Analysis**
+
    - Plot or select a memory-bound application (low operational intensity)
    - Read the analysis panel recommendations:
      - Cache optimization strategies
@@ -82,6 +87,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
      - Algorithmic restructuring suggestions
 
 2. **Compute-Bound Analysis**
+
    - Plot or select a compute-bound application (high operational intensity)
    - Observe optimization suggestions:
      - Vectorization opportunities
@@ -96,6 +102,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 6: Architecture Comparison
 
 1. **Side-by-Side Analysis**
+
    - Plot the same application on different architectures
    - Switch between Apple Silicon, Intel Xeon, and NVIDIA GPU
    - Compare where the same workload falls on different rooflines
@@ -108,6 +115,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 7: Advanced Analysis Scenarios
 
 1. **Multi-Level Memory Hierarchy**
+
    - Understand that real systems have multiple rooflines for different memory levels
    - L1 cache provides highest bandwidth but lowest capacity
    - Main memory provides highest capacity but lowest bandwidth per core
@@ -122,11 +130,13 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 8: Performance Optimization Workflow
 
 1. **Baseline Measurement**
+
    - Start by plotting your application's current performance
    - Identify whether it's memory-bound or compute-bound
    - Note the distance from the roofline (optimization potential)
 
 2. **Strategy Selection**
+
    - For memory-bound applications:
      - Focus on cache optimization and data locality
      - Consider data structure reorganization
@@ -145,11 +155,13 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 9: Real-World Application Examples
 
 1. **Scientific Computing**
+
    - Climate modeling (typically memory-bound)
    - Molecular dynamics (mixed characteristics)
    - Finite element analysis (varies with mesh size)
 
 2. **Machine Learning**
+
    - Training (often memory-bound due to large models)
    - Inference (can be compute-bound with optimization)
    - Data preprocessing (typically memory-bound)
@@ -162,6 +174,7 @@ Follow these step-by-step instructions to understand and explore the Roofline Pe
 ### Step 10: Performance Analysis Report
 
 1. **Document Your Findings**
+
    - Record baseline performance measurements
    - Note optimization strategies applied
    - Document performance improvements achieved
