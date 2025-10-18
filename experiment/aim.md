@@ -10,4 +10,4 @@ To understand and analyze the Roofline Performance Model for computational perfo
 
 5. **Develop Optimization Strategies**: Gain insights into how to optimize applications based on their position in the roofline space, including techniques for increasing operational intensity, improving memory utilization, and maximizing compute resource usage.
 
-6. **Explore Real-world Applications**: Understand how modern high-performance computing, machine learning, and scientific applications can be analyzed and optimized using roofline methodology for various hardware platforms.
+
