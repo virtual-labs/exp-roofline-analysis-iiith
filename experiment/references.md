@@ -1,9 +1,7 @@
-### Books and Textbooks
+### Text Books
 
-1. **Hennessy, J. L., & Patterson, D. A.** (2019). _Computer Architecture: A Quantitative Approach_ (6th ed.). Morgan Kaufmann.
+1. Hennessy, John L., and David A. Patterson. *Computer Architecture: A Quantitative Approach*, 6th Edition. Morgan Kaufmann, 2017.
 
-   - Chapter 4: Data-Level Parallelism in Vector, SIMD, and GPU Architectures
-   - Appendix B: Review of Memory Hierarchy
+### Papers
 
-2. **Williams, S., Waterman, A., & Patterson, D.** (2009). Roofline: an insightful visual performance model for multicore architectures. _Communications of the ACM_, 52(4), 65-76.
-
+2. Samuel Williams, Andrew Waterman, and David Patterson. 2009. "Roofline: An Insightful Visual Performance Model for Multicore Architectures." *Communications of the ACM* 52, 4 (April 2009), 65–76. [https://doi.org/10.1145/1498765.1498785](https://doi.org/10.1145/1498765.1498785)
