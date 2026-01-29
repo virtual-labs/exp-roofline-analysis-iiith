@@ -1,0 +1,692 @@
+<!DOCTYPE html><html lang="en"><head>
+      <!--Google Tag Manager-->
+      <script class="gtm">
+        var dataLayer = [{
+        'labName': 'Virtual Lab',
+        'discipline': 'Test',
+        'college': 'IIITH',
+        'phase': 'Testing',
+        'expName': 'ROOFLINE PERFORMANCE MODEL ANALYSIS',
+        'expShortName': 'roofline-analysis'
+        }];
+    
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5NMQ9NQ');
+      </script>
+      <!--End Google Tag Manager-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    
+    	<meta name="experiment-short-name" content="roofline-analysis">
+    	<meta name="developer-institute" content="IIITH">
+    	<meta name="learning-unit" content="Roofline Performance Model Analysis">
+    	<meta name="task-name" content="Procedure">
+    
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>Virtual Labs</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+    <link rel="stylesheet" href="./assets/css/vlabs-style.css">
+    <link rel="stylesheet" href="./assets/css/toast.css">
+    <link rel="stylesheet" href="./assets/katex_assets/katex.min.css">
+    
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      h1 {
+      font-size: 1.8rem;
+      }
+      h2 {
+      font-size: 1.4rem;
+      }
+      h3 {
+      font-size: 1.2rem;
+      }
+
+      h2, h3 {
+      font-weight: 800;
+      }
+    </style>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"></head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+      <!--Google Tag Manager (noscript)-->
+      <noscript class="gtm">
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5NMQ9NQ" style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <!--End Google Tag Manager (noscript)-->
+  
+      <header class="vlabs-header sticky-top bg-white">
+        <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+          
+          <button class="navbar-toggler px-4" type="button" onclick="toggle()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="d-flex justify-content-center">        
+            <a href="https://vlab.co.in" class="navbar-brand">
+              <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+            </a>
+          </div>
+          
+          <div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center justify-content-end">
+            <div class="svc-rating-display">
+                <rating-display spreadsheetid="1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU" sheetname="Experiment-Database" columnname="Experiment Short Name" columnvalue="roofline-analysis" imagesdirectory="/plugins/svc-rating/images/">
+                </rating-display>
+            </div>      <div class="svc-rating-submit">
+                <rating-submit title="Rate" this="" experiment="">
+                </rating-submit>
+            </div>      <bug-report id="bug-report" title="[BUG REPORT] ROOFLINE PERFORMANCE MODEL ANALYSIS" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IIITH&quot;,&quot;expname&quot;:&quot;ROOFLINE PERFORMANCE MODEL ANALYSIS&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
+          </div>
+        </nav>
+      </header>
+      <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row d-flex justify-content-between">
+          <div class="flex-column">
+          <div class="row py-4 px-4 breadcrumbs">
+          	<div class="title is-4 tools">Tools</div>
+          	<span class="mx-2">
+          		<i aria-hidden="true" class="fa fa-angle-right"></i>
+          	</span>
+          	<a href="performance-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Performance Tool</button>
+          	</a>
+          	<a href="validator-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Validation Tool</button>
+          	</a>
+          </div>
+          </div>
+        </div>
+        <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+          <div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                              <a href="https://vlab.co.in" class="navbar-brand">
+                                  <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+                              </a>
+                          </h5>
+                          <button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body nav-menu">
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="index.html" class="p-2 ">
+                                      Aim
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="theory.html" class="p-2 ">
+                                      Theory
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="pretest.html" class="p-2 ">
+                                      Pretest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="procedure.html" class="p-2  current-item ">
+                                      Procedure
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="simulation.html" class="p-2 ">
+                                      Simulation
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="posttest.html" class="p-2 ">
+                                      Posttest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="references.html" class="p-2 ">
+                                      References
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="contributors.html" class="p-2 ">
+                                      Contributors
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="feedback.html" class="p-2 ">
+                                      Feedback
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="index.html" class="p-2 ">
+                        Aim
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="theory.html" class="p-2 ">
+                        Theory
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="pretest.html" class="p-2 ">
+                        Pretest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="procedure.html" class="p-2  current-item ">
+                        Procedure
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="simulation.html" class="p-2 ">
+                        Simulation
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="posttest.html" class="p-2 ">
+                        Posttest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="references.html" class="p-2 ">
+                        References
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="contributors.html" class="p-2 ">
+                        Contributors
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="feedback.html" class="p-2 ">
+                        Feedback
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2 id="roofline-performance-model-analysis">Roofline Performance Model Analysis</h2>
+          
+            </div>
+              <p>Follow these step-by-step instructions to understand and explore the Roofline Performance Model using the interactive simulator.</p>
+          <h3 id="step-1-understanding-the-interface">Step 1: Understanding the Interface</h3>
+          <ol>
+          <li><p><strong>Observe the Initial Setup</strong></p>
+          <ul>
+          <li>Notice the main roofline chart area with logarithmic axes</li>
+          <li>The X-axis represents Operational Intensity (FLOP/Byte)</li>
+          <li>The Y-axis represents Performance (GFLOP/s)</li>
+          <li>Pre-configured architecture profiles are available in the dropdown</li>
+          </ul>
+          </li>
+          <li><p><strong>Familiarize with the Components</strong></p>
+          <ul>
+          <li><strong>Architecture Selector</strong>: Choose between Apple Silicon, Intel Xeon, NVIDIA GPU, or Custom</li>
+          <li><strong>Roofline Chart</strong>: Interactive visualization with moveable points</li>
+          <li><strong>Performance Controls</strong>: Sliders for memory bandwidth and compute capability</li>
+          <li><strong>Application Plotter</strong>: Interface to add computational workloads to the chart</li>
+          <li><strong>Analysis Panel</strong>: Shows bottleneck identification and optimization suggestions</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-2-basic-roofline-construction">Step 2: Basic Roofline Construction</h3>
+          <ol>
+          <li><p><strong>Start with Apple Silicon M1</strong></p>
+          <ul>
+          <li>Select <strong>Apple Silicon M1</strong> from the architecture dropdown</li>
+          <li>Observe the pre-configured roofline with:<ul>
+          <li>Memory bandwidth: 68.25 GB/s</li>
+          <li>Peak performance: 2.6 TFLOP/s</li>
+          <li>Ridge point automatically calculated</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><p><strong>Understand the Roofline Shape</strong></p>
+          <ul>
+          <li>Notice the diagonal line representing memory bandwidth limitation</li>
+          <li>Observe the horizontal line representing compute capability ceiling</li>
+          <li>Identify the ridge point where these two lines intersect</li>
+          <li>The ridge point = Peak Performance / Memory Bandwidth</li>
+          </ul>
+          </li>
+          <li><p><strong>Explore Different Architectures</strong></p>
+          <ul>
+          <li>Switch to <strong>Intel Xeon</strong> and observe different characteristics</li>
+          <li>Try <strong>NVIDIA GPU</strong> to see high-performance computing capabilities</li>
+          <li>Notice how different architectures have different performance profiles</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-3-interactive-roofline-modification">Step 3: Interactive Roofline Modification</h3>
+          <ol>
+          <li><p><strong>Use Custom Configuration</strong></p>
+          <ul>
+          <li>Select <strong>Custom</strong> from the architecture dropdown</li>
+          <li>Adjust the <strong>Memory Bandwidth</strong> slider (1-1000 GB/s range)</li>
+          <li>Modify the <strong>Compute Capability</strong> slider (0.1-100 TFLOP/s range)</li>
+          <li>Watch the roofline shape change in real-time</li>
+          </ul>
+          </li>
+          <li><p><strong>Analyze Ridge Point Changes</strong></p>
+          <ul>
+          <li>Experiment with different bandwidth and compute ratios</li>
+          <li>Notice how increasing bandwidth shifts the ridge point left</li>
+          <li>Observe how increasing compute capability shifts the ridge point right</li>
+          <li>Understand the implications for different application types</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-4-application-performance-analysis">Step 4: Application Performance Analysis</h3>
+          <ol>
+          <li><p><strong>Plot Basic Applications</strong></p>
+          <ul>
+          <li>Click anywhere on the roofline chart to add an application point</li>
+          <li>Try plotting points in different regions:<ul>
+          <li>Below the diagonal (memory-bound region)</li>
+          <li>Above the diagonal but below ceiling (unattainable region)</li>
+          <li>On the horizontal ceiling (compute-bound region)</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><p><strong>Analyze Predefined Workloads</strong></p>
+          <ul>
+          <li>Use the application selector to add common workloads:<ul>
+          <li><strong>Vector Addition</strong>: Low operational intensity, memory-bound</li>
+          <li><strong>Dense Matrix Multiplication</strong>: High operational intensity, potentially compute-bound</li>
+          <li><strong>Sparse Matrix Operations</strong>: Medium operational intensity</li>
+          <li><strong>FFT Operations</strong>: Variable intensity based on size</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><p><strong>Interpret Results</strong></p>
+          <ul>
+          <li>Applications below the roofline are memory-bound</li>
+          <li>Applications on the ceiling are compute-bound</li>
+          <li>Points above the roofline are theoretically unattainable</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-5-bottleneck-identification">Step 5: Bottleneck Identification</h3>
+          <ol>
+          <li><p><strong>Memory-Bound Analysis</strong></p>
+          <ul>
+          <li>Plot or select a memory-bound application (low operational intensity)</li>
+          <li>Read the analysis panel recommendations:<ul>
+          <li>Cache optimization strategies</li>
+          <li>Data layout improvements</li>
+          <li>Algorithmic restructuring suggestions</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><p><strong>Compute-Bound Analysis</strong></p>
+          <ul>
+          <li>Plot or select a compute-bound application (high operational intensity)</li>
+          <li>Observe optimization suggestions:<ul>
+          <li>Vectorization opportunities</li>
+          <li>Parallelization strategies</li>
+          <li>Algorithmic complexity reduction</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><p><strong>Ridge Point Applications</strong></p>
+          <ul>
+          <li>Plot applications near the ridge point</li>
+          <li>Understand that these applications are transitional</li>
+          <li>Learn about balanced optimization approaches</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-6-architecture-comparison">Step 6: Architecture Comparison</h3>
+          <ol>
+          <li><p><strong>Side-by-Side Analysis</strong></p>
+          <ul>
+          <li>Plot the same application on different architectures</li>
+          <li>Switch between Apple Silicon, Intel Xeon, and NVIDIA GPU</li>
+          <li>Compare where the same workload falls on different rooflines</li>
+          </ul>
+          </li>
+          <li><p><strong>Optimization Strategy Differences</strong></p>
+          <ul>
+          <li>Memory-bound applications benefit more from high-bandwidth architectures</li>
+          <li>Compute-bound applications benefit from high peak performance systems</li>
+          <li>Understand architecture selection criteria for different workloads</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-7-advanced-analysis-scenarios">Step 7: Advanced Analysis Scenarios</h3>
+          <ol>
+          <li><p><strong>Multi-Level Memory Hierarchy</strong></p>
+          <ul>
+          <li>Understand that real systems have multiple rooflines for different memory levels</li>
+          <li>L1 cache provides highest bandwidth but lowest capacity</li>
+          <li>Main memory provides highest capacity but lowest bandwidth per core</li>
+          <li>Each level creates its own performance ceiling</li>
+          </ul>
+          </li>
+          <li><p><strong>Scaling Analysis</strong></p>
+          <ul>
+          <li>Consider how applications scale with problem size</li>
+          <li>Small problems often memory-bound (low cache reuse)</li>
+          <li>Large problems may become compute-bound (high cache reuse)</li>
+          <li>Very large problems may become memory-bound again (exceed cache capacity)</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-8-performance-optimization-workflow">Step 8: Performance Optimization Workflow</h3>
+          <ol>
+          <li><p><strong>Baseline Measurement</strong></p>
+          <ul>
+          <li>Start by plotting your application's current performance</li>
+          <li>Identify whether it's memory-bound or compute-bound</li>
+          <li>Note the distance from the roofline (optimization potential)</li>
+          </ul>
+          </li>
+          <li><p><strong>Strategy Selection</strong></p>
+          <ul>
+          <li>For memory-bound applications:<ul>
+          <li>Focus on cache optimization and data locality</li>
+          <li>Consider data structure reorganization</li>
+          <li>Implement cache blocking techniques</li>
+          </ul>
+          </li>
+          <li>For compute-bound applications:<ul>
+          <li>Focus on vectorization and parallelization</li>
+          <li>Consider algorithmic improvements</li>
+          <li>Optimize for specific instruction sets</li>
+          </ul>
+          </li>
+          </ul>
+          </li>
+          <li><p><strong>Implementation and Verification</strong></p>
+          <ul>
+          <li>Apply selected optimization strategies</li>
+          <li>Re-measure and re-plot performance</li>
+          <li>Verify movement toward the roofline</li>
+          <li>Iterate until satisfactory performance achieved</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-9-real-world-application-examples">Step 9: Real-World Application Examples</h3>
+          <ol>
+          <li><p><strong>Scientific Computing</strong></p>
+          <ul>
+          <li>Climate modeling (typically memory-bound)</li>
+          <li>Molecular dynamics (mixed characteristics)</li>
+          <li>Finite element analysis (varies with mesh size)</li>
+          </ul>
+          </li>
+          <li><p><strong>Machine Learning</strong></p>
+          <ul>
+          <li>Training (often memory-bound due to large models)</li>
+          <li>Inference (can be compute-bound with optimization)</li>
+          <li>Data preprocessing (typically memory-bound)</li>
+          </ul>
+          </li>
+          <li><p><strong>Graphics and Gaming</strong></p>
+          <ul>
+          <li>Rasterization (memory-bound for high resolutions)</li>
+          <li>Ray tracing (compute-intensive)</li>
+          <li>Physics simulation (mixed characteristics)</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="step-10-performance-analysis-report">Step 10: Performance Analysis Report</h3>
+          <ol>
+          <li><p><strong>Document Your Findings</strong></p>
+          <ul>
+          <li>Record baseline performance measurements</li>
+          <li>Note optimization strategies applied</li>
+          <li>Document performance improvements achieved</li>
+          <li>Analyze cost-benefit of different approaches</li>
+          </ul>
+          </li>
+          <li><p><strong>Compare Across Architectures</strong></p>
+          <ul>
+          <li>Evaluate the same workload on different systems</li>
+          <li>Consider price-performance ratios</li>
+          <li>Factor in power consumption and efficiency</li>
+          <li>Make informed hardware selection decisions</li>
+          </ul>
+          </li>
+          </ol>
+          <h3 id="expected-learning-outcomes">Expected Learning Outcomes</h3>
+          <p>After completing this procedure, you should understand:</p>
+          <ul>
+          <li>How to construct and interpret roofline performance models</li>
+          <li>The relationship between operational intensity and performance bottlenecks</li>
+          <li>How different computer architectures affect application performance</li>
+          <li>Systematic approaches to performance optimization</li>
+          <li>Trade-offs between memory bandwidth and computational capability</li>
+          <li>Real-world applications of roofline analysis in system design and optimization</li>
+          </ul>
+          <h3 id="troubleshooting-tips">Troubleshooting Tips</h3>
+          <ul>
+          <li>If the chart doesn't update, try refreshing the page and starting over</li>
+          <li>Ensure your browser supports modern JavaScript for full functionality</li>
+          <li>Use the reset button to clear all plotted applications and start fresh</li>
+          <li>Pay attention to the logarithmic scales when interpreting results</li>
+          <li>Remember that the roofline represents upper bounds, not guaranteed performance</li>
+          </ul>
+          
+          </div>
+          <div class="bug-report-mobile">
+              <bug-report id="bug-report" title="[BUG REPORT] ROOFLINE PERFORMANCE MODEL ANALYSIS" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IIITH&quot;,&quot;expname&quot;:&quot;ROOFLINE PERFORMANCE MODEL ANALYSIS&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
+                          position: fixed; 
+                          bottom: 20px;
+                          right: 20px;
+                          z-index: 1;
+                          font-size: 0;
+                          padding: 25px;
+                          border-radius: 50%;
+                          border: none;
+                          background-color: #0fc0ff;
+                          background-image: url(data:image/png;base64,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);
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 30px;
+                          filter: invert(1);">
+              </bug-report>
+          </div>        </div>
+      </div>
+      <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <div class="row px-5 mx-0">
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Community Links</span>
+            <a href="https://www.sakshat.ac.in/" class="text-light">Sakshat Portal</a>
+            <a href="http://outreach.vlabs.ac.in/" class="text-light">Outreach Portal</a>
+            <a href="https://vlab.co.in/faq" class="text-light">FAQ: Virtual Labs</a>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
+            <span> Phone: General Information: 011-26582050 </span>
+            <span> Email: support@vlabs.ac.in </span>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>
+            <div class="social-links">
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+      	  <i class="fab fa-twitter"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+      	  <i class="fab fa-facebook"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+      	  <i class="fab fa-youtube"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+      	  <i class="fab fa-linkedin"></i>
+      	</a>
+            </div>
+          </div>
+        </div>
+        <div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+          <a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+          &nbsp;&amp;&nbsp;
+          <a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons (CC BY-NC-SA 4.0) </a>
+        </div>
+      </footer>
+    <script src="./assets/js/toggleSidebar.js"></script>
+    <script src="./assets/js/event-handler.js"></script>
+
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  
+
+<script type="module" src="https://cdn.vlabs.ac.in/bug-report/vlabs-bug-report.js"></script><script type="module" src="/exp-roofline-analysis-iiith/plugins/svc-rating/index.js"></script><script type="module" src="/exp-roofline-analysis-iiith/plugins/svc-rating/config.js"></script><script type="module" src="https://apis.google.com/js/api.js"></script></body></html>
